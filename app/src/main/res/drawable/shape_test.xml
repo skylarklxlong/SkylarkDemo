@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!--
+
+    shape:可以指定形状 line线形 oval椭圆形 ring环形 rectangle距形
+
+    solid：填充
+    android:color指定填充的颜色
+
+    gradient：渐变
+    android:startColor和android:endColor分别为起始和结束颜色，
+    android:angle是渐变角度，必须为45的整数倍。
+    另外渐变默认的模式为android:type="linear"，即线性渐变，
+    可以指定渐变为径向渐变，android:type="radial"，径向渐变需要指定半径android:gradientRadius="50"。
+    还可以指定渐变模式为：android:type="sweep"，旋转渐变
+
+    stroke：描边
+    android:width="2dp" 描边的宽度，android:color 描边的颜色。
+    我们还可以把描边弄成虚线的形式，设置方式为：
+    android:dashWidth="5dp"
+    android:dashGap="3dp"
+    其中android:dashWidth表示'-'这样一个横线的宽度，android:dashGap表示之间隔开的距离
+
+    corners：圆角
+    android:radius为角的弧度，值越大角越圆。
+    我们还可以把四个角设定成不同的角度，
+    同时设置五个属性，则Radius属性无效
+    android:Radius="20dp"                           设置四个角的半径
+    android:topLeftRadius="20dp"              设置左上角的半径
+    android:topRightRadius="20dp"           设置右上角的半径
+    android:bottomLeftRadius="20dp"      设置右下角的半径
+    android:bottomRightRadius="20dp"    设置左下角的半径
+
+    padding：间隔
+    可以设置上下左右四个方向的间隔
+
+    size: 大小
+    可以设置整个shape的大小
+
+    -->
+    <!-- 填充 -->
+    <solid android:color="#ffffff" /> <!-- 定义填充的颜色值 -->
+
+    <!-- 渐变 -->
+    <gradient
+        android:angle="90"
+        android:endColor="#00ff00"
+        android:startColor="#ff0000"
+        android:type="sweep" />
+
+    <!-- 描边 -->
+    <stroke
+        android:width="10dp"
+        android:color="#0000ff"
+        android:dashGap="3dp"
+        android:dashWidth="5dp" /> <!-- 定义描边的宽度和描边的颜色值 -->
+
+    <!-- 圆角 -->
+    <corners
+        android:bottomLeftRadius="5dp"
+        android:bottomRightRadius="5dp"
+        android:topLeftRadius="5dp"
+        android:topRightRadius="5dp" /> <!-- 设置四个角的半径 -->
+
+    <!-- 间隔 -->
+    <padding
+        android:bottom="10dp"
+        android:left="10dp"
+        android:right="10dp"
+        android:top="10dp" /> <!-- 设置各个方向的间隔 -->
+
+    <!-- 决定形状的大小 -->
+    <size
+        android:width="300dp"
+        android:height="200dp" />
+
+</shape>
