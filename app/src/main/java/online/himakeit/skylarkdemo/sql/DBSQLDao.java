@@ -305,7 +305,7 @@ public class DBSQLDao {
     }
 
     /**
-     * 查找数据--统计查询
+     * 查找数据--比较查询
      *
      * @return
      */

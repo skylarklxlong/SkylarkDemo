@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity
         secondFragment = new SecondFragment();
         thirdFragment = new ThirdFragment();
 
-        fragmentArrayList.add(firstFragment);
         fragmentArrayList.add(secondFragment);
+        fragmentArrayList.add(firstFragment);
         fragmentArrayList.add(thirdFragment);
     }
 

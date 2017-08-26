@@ -5,10 +5,17 @@
     android:orientation="vertical"
     android:layout_margin="5dp">
 
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数据库名：database.db 表名：mytable 表属性如下列表"
+        />
+
     <LinearLayout
         android:layout_margin="2dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:orientation="horizontal">
         <EditText
             android:id="@+id/edit_sql"
@@ -26,7 +33,7 @@
     <LinearLayout
         android:layout_margin="2dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:orientation="horizontal">
         <Button
             android:background="#88ff0000"
@@ -53,7 +60,7 @@
     <LinearLayout
         android:layout_margin="2dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:orientation="horizontal">
         <Button
             android:background="#8800ff00"
@@ -79,6 +86,7 @@
     </LinearLayout>
 
     <TextView
+        android:gravity="center"
         android:visibility="gone"
         android:layout_margin="2dp"
         android:id="@+id/tv_sqlmsg"
