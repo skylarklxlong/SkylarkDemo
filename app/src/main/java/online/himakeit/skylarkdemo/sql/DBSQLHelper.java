@@ -15,7 +15,7 @@ public class DBSQLHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "database.db";
     private static final int DB_VERSION = 1;
-    public static final String TABLE_NAME = "mytable";
+    public static final String TABLE_NAME = "Mytable";
     public static final String TABLE_NAME_1 = "Book";
     public static final String TABLE_NAME_2 = "Category";
 

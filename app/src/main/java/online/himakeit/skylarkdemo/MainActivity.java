@@ -18,19 +18,22 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import online.himakeit.skylarkdemo.fragment.FirstFragment;
-import online.himakeit.skylarkdemo.fragment.SecondFragment;
-import online.himakeit.skylarkdemo.fragment.ThirdFragment;
+import online.himakeit.skylarkdemo.fragment.ShapeFragment;
+import online.himakeit.skylarkdemo.fragment.SQLiteFragment;
+import online.himakeit.skylarkdemo.fragment.SearchFragment;
+import online.himakeit.skylarkdemo.fragment.TestFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fragmentManager;
     ArrayList<Fragment> fragmentArrayList;
-    FirstFragment firstFragment;
-    SecondFragment secondFragment;
-    ThirdFragment thirdFragment;
+    ShapeFragment shapeFragment;
+    SQLiteFragment SQLiteFragment;
+    SearchFragment searchFragment;
+    TestFragment testFragment;
 
+    Toolbar toolbar;
     int preIndex = 0;
 
     @Override
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // TODO: 2017/8/11 ToolBar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -61,40 +64,48 @@ public class MainActivity extends AppCompatActivity
 
         // TODO: 2017/8/11 初始化fargment
         initFragment();
-        setToolBarTitle("Camera");
+        setToolBarTitle("Search");
         // TODO: 2017/8/11 默认加载一个fragment
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fl_main_container,fragmentArrayList.get(0));
-        fragmentTransaction.commit();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.add(R.id.fl_main_container, fragmentArrayList.get(0));
+//        fragmentTransaction.commit();
         // TODO: 2017/8/11 第一次加载不能使用loadFragment方法 不知为何?
-//        loadFragment(0);
+        // TODO: 2017/9/5  第一次加载不能使用loadFragment()方法是因为，在第一次时index和preIndex都为0，不能先hide在add同一个fragment，现在已修复
+        loadFragment(0);
     }
 
-    private void setToolBarTitle(String title){
+    private void setToolBarTitle(String title) {
         getSupportActionBar().setTitle(title);
     }
 
     private void initFragment() {
         fragmentManager = getSupportFragmentManager();
         fragmentArrayList = new ArrayList<Fragment>();
-        firstFragment = new FirstFragment();
-        secondFragment = new SecondFragment();
-        thirdFragment = new ThirdFragment();
+        shapeFragment = new ShapeFragment();
+        SQLiteFragment = new SQLiteFragment();
+        searchFragment = new SearchFragment();
+        testFragment = new TestFragment();
 
-        fragmentArrayList.add(secondFragment);
-        fragmentArrayList.add(firstFragment);
-        fragmentArrayList.add(thirdFragment);
+        fragmentArrayList.add(searchFragment);
+        fragmentArrayList.add(SQLiteFragment);
+        fragmentArrayList.add(shapeFragment);
+        fragmentArrayList.add(testFragment);
     }
 
-    public void loadFragment(int index){
+    public void loadFragment(int index) {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         Fragment fragment = fragmentArrayList.get(index);
         Fragment preFragment = fragmentArrayList.get(preIndex);
 
-        if (!fragment.isAdded()){
-            fragmentTransaction.hide(preFragment).add(R.id.fl_main_container,fragment);
-        }else {
+        if (!fragment.isAdded()) {
+            // TODO: 2017/9/5 修复第一次不能使用loadFragment方法加载fragment
+            if (index == preIndex) {
+                fragmentTransaction.add(R.id.fl_main_container, fragment);
+            } else {
+                fragmentTransaction.hide(preFragment).add(R.id.fl_main_container, fragment);
+            }
+        } else {
             fragmentTransaction.hide(preFragment).show(fragment);
         }
 
@@ -144,21 +155,21 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
             loadFragment(0);
-            setToolBarTitle("Camera");
+            setToolBarTitle("Search");
         } else if (id == R.id.nav_gallery) {
             loadFragment(1);
-            setToolBarTitle("Gallery");
+            setToolBarTitle("SQLite");
         } else if (id == R.id.nav_slideshow) {
             loadFragment(2);
-            setToolBarTitle("Slideshow");
+            setToolBarTitle("Shape");
         } else if (id == R.id.nav_manage) {
-            loadFragment(0);
-            setToolBarTitle("Manage");
+            loadFragment(3);
+            setToolBarTitle("Tools");
         } else if (id == R.id.nav_share) {
-            loadFragment(1);
+            loadFragment(3);
             setToolBarTitle("Share");
         } else if (id == R.id.nav_send) {
-            loadFragment(2);
+            loadFragment(3);
             setToolBarTitle("Send");
         }
 
