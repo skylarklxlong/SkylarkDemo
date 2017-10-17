@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_immersion_normal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="常规页面"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_immersion_pic"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="顶部图片页面"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_immersion_nav"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="侧滑页面"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_immersion_actionbar"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="ActionBar 渐变色页面"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

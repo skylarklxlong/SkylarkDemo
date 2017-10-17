@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import online.himakeit.skylarkdemo.shapedemo.ShapeFragment;
 import online.himakeit.skylarkdemo.sqlitedemo.SQLiteFragment;
 import online.himakeit.skylarkdemo.searchdemo.SearchFragment;
-import online.himakeit.skylarkdemo.fragment.TestFragment;
+import online.himakeit.skylarkdemo.immersion_status_bar.MainImmersionFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     ShapeFragment shapeFragment;
     SQLiteFragment SQLiteFragment;
     SearchFragment searchFragment;
-    TestFragment testFragment;
+    MainImmersionFragment mainImmersionFragment;
 
     Toolbar toolbar;
     int preIndex = 0;
@@ -84,12 +84,12 @@ public class MainActivity extends AppCompatActivity
         shapeFragment = new ShapeFragment();
         SQLiteFragment = new SQLiteFragment();
         searchFragment = new SearchFragment();
-        testFragment = new TestFragment();
+        mainImmersionFragment = new MainImmersionFragment();
 
         fragmentArrayList.add(searchFragment);
         fragmentArrayList.add(SQLiteFragment);
         fragmentArrayList.add(shapeFragment);
-        fragmentArrayList.add(testFragment);
+        fragmentArrayList.add(mainImmersionFragment);
     }
 
     public void loadFragment(int index) {
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity
             setToolBarTitle("Shape");
         } else if (id == R.id.nav_manage) {
             loadFragment(3);
-            setToolBarTitle("Tools");
+            setToolBarTitle("沉浸式状态栏");
         } else if (id == R.id.nav_share) {
             loadFragment(3);
             setToolBarTitle("Share");
