@@ -31,18 +31,18 @@
             android:label="@string/title_activity_immersion_normal"
             android:name=".immersion_status_bar.ImmersionNormalActivity"
             android:launchMode="singleTask"
-            android:theme="@style/TranslucentTheme"
+            android:theme="@style/NoActionBarTheme"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:label="@string/title_activity_immersion_pic"
             android:name=".immersion_status_bar.ImmersionPicActivity"
             android:launchMode="singleTask"
-            android:theme="@style/TranslucentTheme" />
+            android:theme="@style/NoActionBarTheme" />
         <activity
             android:label="@string/title_activity_immersion_nav"
             android:name=".immersion_status_bar.ImmersionNavActivity"
             android:launchMode="singleTask"
-            android:theme="@style/TranslucentTheme" />
+            android:theme="@style/NoActionBarTheme" />
         <activity
             android:label="@string/title_activity_immersion_action_bar"
             android:name=".immersion_status_bar.ImmersionActionBarActivity"

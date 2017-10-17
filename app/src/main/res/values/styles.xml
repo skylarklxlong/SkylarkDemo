@@ -19,6 +19,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--暂时没有使用，如果使用这种方式可以沉浸状态栏，但是底部的虚拟按键背景会变成透明的-->
     <style name="TranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

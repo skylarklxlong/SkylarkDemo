@@ -11,5 +11,9 @@ public class ImmersionNormalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_immersion_normal);
+
+        StatusBarUtils.with(this)
+                .setColor(getResources().getColor(R.color.blue))
+                .init();
     }
 }
