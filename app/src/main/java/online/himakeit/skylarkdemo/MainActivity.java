@@ -3,12 +3,13 @@ package online.himakeit.skylarkdemo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import online.himakeit.skylarkdemo.about.AboutActivity;
+import online.himakeit.skylarkdemo.about.WebActivity;
 import online.himakeit.skylarkdemo.immersion_status_bar.MainImmersionActivity;
 import online.himakeit.skylarkdemo.searchdemo.SearchActivity;
 import online.himakeit.skylarkdemo.shapedemo.ShapeActivity;
@@ -32,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                mIntent = WebActivity.newTntent(MainActivity.this,"http://himakeit.online","LiXueLong'Blog");
+                startActivity(mIntent);
             }
         });
     }
@@ -48,7 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-
+            case R.id.action_about:
+                mIntent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(mIntent);
+                break;
         }
 
         return super.onOptionsItemSelected(item);

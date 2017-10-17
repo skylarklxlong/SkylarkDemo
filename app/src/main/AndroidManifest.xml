@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="online.himakeit.skylarkdemo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -12,7 +14,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,22 +28,44 @@
             android:exported="true" />
 
         <activity
+            android:label="@string/title_activity_immersion_normal"
             android:name=".immersion_status_bar.ImmersionNormalActivity"
+            android:launchMode="singleTask"
             android:theme="@style/TranslucentTheme"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
+            android:label="@string/title_activity_immersion_pic"
             android:name=".immersion_status_bar.ImmersionPicActivity"
+            android:launchMode="singleTask"
             android:theme="@style/TranslucentTheme" />
         <activity
+            android:label="@string/title_activity_immersion_nav"
             android:name=".immersion_status_bar.ImmersionNavActivity"
+            android:launchMode="singleTask"
             android:theme="@style/TranslucentTheme" />
         <activity
+            android:label="@string/title_activity_immersion_action_bar"
             android:name=".immersion_status_bar.ImmersionActionBarActivity"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme" />
-        <activity android:name=".searchdemo.SearchActivity"/>
-        <activity android:name=".sqlitedemo.SQLiteActivity"/>
-        <activity android:name=".shapedemo.ShapeActivity"/>
-        <activity android:name=".immersion_status_bar.MainImmersionActivity"/>
+        <activity android:name=".searchdemo.SearchActivity"
+            android:launchMode="singleTask"
+            android:label="@string/title_activity_search"/>
+        <activity android:name=".sqlitedemo.SQLiteActivity"
+            android:launchMode="singleTask"
+            android:label="@string/title_activity_sqlite"/>
+        <activity android:name=".shapedemo.ShapeActivity"
+            android:launchMode="singleTask"
+            android:label="@string/title_activity_shape"/>
+        <activity android:name=".immersion_status_bar.MainImmersionActivity"
+            android:launchMode="singleTask"
+            android:label="@string/title_activity_immersion"/>
+        <activity android:name=".about.AboutActivity"
+            android:launchMode="singleTask"
+            android:label="@string/title_activity_about"/>
+        <activity android:name=".about.WebActivity"
+            android:theme="@style/NoActionBarTheme"
+            android:launchMode="singleTask"/>
 
     </application>
 

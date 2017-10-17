@@ -29,6 +29,7 @@
         android:id="@+id/btn_immersion_actionbar"
         android:layout_marginTop="10dp"
         android:gravity="center"
+        android:textAllCaps="false"
         android:text="ActionBar 渐变色页面"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_refresh"
+        android:title="刷新"
+        android:orderInCategory="198"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_copy_url"
+        android:title="复制链接"
+        android:orderInCategory="199"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_open_url"
+        android:title="在浏览器中打开"
+        android:orderInCategory="200"
+        app:showAsAction="never" />
+</menu>
