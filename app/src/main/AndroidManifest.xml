@@ -28,11 +28,11 @@
 
         <activity android:name=".immersion_status_bar.ImmersionNormalActivity"
             android:windowSoftInputMode="stateHidden|adjustResize"
-            android:theme="@style/NoActionBarAppTheme"/>
+            android:theme="@style/TranslucentTheme"/>
         <activity android:name=".immersion_status_bar.ImmersionPicActivity"
-            android:theme="@style/NoActionBarAppTheme"/>
+            android:theme="@style/TranslucentTheme"/>
         <activity android:name=".immersion_status_bar.ImmersionNavActivity"
-            android:theme="@style/NoActionBarAppTheme"/>
+            android:theme="@style/TranslucentTheme"/>
         <activity android:name=".immersion_status_bar.ImmersionActionBarActivity"
             android:theme="@style/AppTheme"/>
     </application>

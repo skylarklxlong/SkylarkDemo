@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="online.himakeit.skylarkdemo.immersion_status_bar.ImmersionPicActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/bg"
+                android:scaleType="fitXY" />
+            <TextView
+                android:gravity="center"
+                android:text="Hello !"
+                android:textSize="20sp"
+                android:textColor="#ff0000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/bg"
+                android:scaleType="fitXY" />
+            <TextView
+                android:gravity="center"
+                android:text="Hello !"
+                android:textSize="20sp"
+                android:textColor="#ff0000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/bg"
+                android:scaleType="fitXY" />
+            <TextView
+                android:gravity="center"
+                android:text="Hello !"
+                android:textSize="20sp"
+                android:textColor="#ff0000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/bg"
+                android:scaleType="fitXY" />
+            <TextView
+                android:gravity="center"
+                android:text="Hello !"
+                android:textSize="20sp"
+                android:textColor="#ff0000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/bg"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
