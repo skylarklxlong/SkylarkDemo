@@ -9,32 +9,39 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/skylark"
         android:supportsRtl="true"
-        android:theme="@style/NoActionBarAppTheme">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="stateHidden">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <provider
             android:name=".contentproviderdemo.DBSQLProvider"
             android:authorities="online.himakeit.skylarkdemo.provider"
             android:exported="true" />
 
-        <activity android:name=".immersion_status_bar.ImmersionNormalActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:theme="@style/TranslucentTheme"/>
-        <activity android:name=".immersion_status_bar.ImmersionPicActivity"
-            android:theme="@style/TranslucentTheme"/>
-        <activity android:name=".immersion_status_bar.ImmersionNavActivity"
-            android:theme="@style/TranslucentTheme"/>
-        <activity android:name=".immersion_status_bar.ImmersionActionBarActivity"
-            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".immersion_status_bar.ImmersionNormalActivity"
+            android:theme="@style/TranslucentTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".immersion_status_bar.ImmersionPicActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".immersion_status_bar.ImmersionNavActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".immersion_status_bar.ImmersionActionBarActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".searchdemo.SearchActivity"/>
+        <activity android:name=".sqlitedemo.SQLiteActivity"/>
+        <activity android:name=".shapedemo.ShapeActivity"/>
+        <activity android:name=".immersion_status_bar.MainImmersionActivity"/>
+
     </application>
 
 </manifest>

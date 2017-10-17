@@ -1,6 +1,9 @@
 package online.himakeit.skylarkdemo.sqlitedemo;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,18 +17,17 @@ import java.util.List;
 
 import online.himakeit.skylarkdemo.MyApplication;
 import online.himakeit.skylarkdemo.R;
-import online.himakeit.skylarkdemo.base.BaseFragment;
 
 /**
- * Created by：LiXueLong 李雪龙 on 2017/8/11 16:42
+ * Created by：LiXueLong 李雪龙 on 2017/10/17 15:14
  * <p>
  * Mail : skylarklxlong@outlook.com
  * <p>
  * Description:
  */
-public class SQLiteFragment extends BaseFragment implements View.OnClickListener {
+public class SQLiteActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "SQLiteFragment";
+    private static final String TAG = "SQLiteActivity";
 
     EditText edit_sql;
     Button btn_doit;
@@ -38,20 +40,14 @@ public class SQLiteFragment extends BaseFragment implements View.OnClickListener
     TextView tv_sqlmsg;
     ListView listview;
 
-    View mRootView;
-
     DBSQLDao dao;
     List<DBSQLBean> beanList;
     SQLListViewAdapter adapter;
 
     @Override
-    public View initViews() {
-        mRootView = View.inflate(getContext(), R.layout.fragment_sqlite,null);
-        return mRootView;
-    }
-
-    @Override
-    public void initData() {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sqlite_demo);
 
         dao = new DBSQLDao(MyApplication.getAppContext());
         if (!dao.isDataExit()){
@@ -84,16 +80,16 @@ public class SQLiteFragment extends BaseFragment implements View.OnClickListener
 
     private void initView() {
         // TODO: 2017/9/5 防止首次进入到该界面时弹出软键盘，可在AndroidManifest中添加 android:windowSoftInputMode="stateHidden"
-        edit_sql = (EditText) mRootView.findViewById(R.id.edit_sql);
-        btn_doit = (Button) mRootView.findViewById(R.id.btn_doit);
-        btn_insert = (Button) mRootView.findViewById(R.id.btn_insert);
-        btn_delete = (Button) mRootView.findViewById(R.id.btn_delete);
-        btn_update = (Button) mRootView.findViewById(R.id.btn_update);
-        btn_query1 = (Button) mRootView.findViewById(R.id.btn_query1);
-        btn_query2 = (Button) mRootView.findViewById(R.id.btn_query2);
-        btn_query3 = (Button) mRootView.findViewById(R.id.btn_query3);
-        tv_sqlmsg = (TextView) mRootView.findViewById(R.id.tv_sqlmsg);
-        listview = (ListView) mRootView.findViewById(R.id.listview);
+        edit_sql = (EditText) findViewById(R.id.edit_sql);
+        btn_doit = (Button) findViewById(R.id.btn_doit);
+        btn_insert = (Button) findViewById(R.id.btn_insert);
+        btn_delete = (Button) findViewById(R.id.btn_delete);
+        btn_update = (Button) findViewById(R.id.btn_update);
+        btn_query1 = (Button) findViewById(R.id.btn_query1);
+        btn_query2 = (Button) findViewById(R.id.btn_query2);
+        btn_query3 = (Button) findViewById(R.id.btn_query3);
+        tv_sqlmsg = (TextView) findViewById(R.id.tv_sqlmsg);
+        listview = (ListView) findViewById(R.id.listview);
         listview.addHeaderView(LayoutInflater.from(MyApplication.getAppContext()).inflate(R.layout.item_sql_header,null,false));
 
     }
@@ -114,7 +110,7 @@ public class SQLiteFragment extends BaseFragment implements View.OnClickListener
                     tv_sqlmsg.setText("执行的SQL语句为："+sql);
                     dao.execSQL(sql);
                 }else {
-                    Snackbar.make(getView(),"请输入SQL语句！",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(tv_sqlmsg,"请输入SQL语句！",Snackbar.LENGTH_SHORT).show();
                 }
                 refreshDbList();
                 break;
@@ -124,7 +120,7 @@ public class SQLiteFragment extends BaseFragment implements View.OnClickListener
                     tv_sqlmsg.setText("新增一条数据：" + "insert into mytable (Name,Age,Gender,City) values ('张三',18,'男','湖北');");
                     refreshDbList();
                 }else {
-                    Snackbar.make(getView(),"新增数据失败！",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(tv_sqlmsg,"新增数据失败！",Snackbar.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btn_delete:
@@ -133,7 +129,7 @@ public class SQLiteFragment extends BaseFragment implements View.OnClickListener
                     tv_sqlmsg.setText("删除一条数据：" + "delete from mytable where Name = '张三';");
                     refreshDbList();
                 }else {
-                    Snackbar.make(getView(),"删除数据失败！",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(tv_sqlmsg,"删除数据失败！",Snackbar.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btn_update:
@@ -142,7 +138,7 @@ public class SQLiteFragment extends BaseFragment implements View.OnClickListener
                     tv_sqlmsg.setText("更新一条数据" + "update mytable set Name = 'zhangsan' where Name = '张三'");
                     refreshDbList();
                 }else {
-                    Snackbar.make(getView(),"更新数据失败！",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(tv_sqlmsg,"更新数据失败！",Snackbar.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btn_query1:
@@ -161,7 +157,7 @@ public class SQLiteFragment extends BaseFragment implements View.OnClickListener
                 if (count > 0){
                     tv_sqlmsg.setText("统计查询：\n此处查询Age为18的数据\nselect count(_id) from mytable where Age = 18\ncount = " + count);
                 }else {
-                    Snackbar.make(getView(),"未查到数据！",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(tv_sqlmsg,"未查到数据！",Snackbar.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btn_query3:
@@ -173,9 +169,10 @@ public class SQLiteFragment extends BaseFragment implements View.OnClickListener
                     stringBuilder1.append("\n(" + bean.id + ", " + bean.name + ", " + bean.age + ", " + bean.gender + ", " + bean.city + ")");
                     tv_sqlmsg.setText(stringBuilder1);
                 }else {
-                    Snackbar.make(getView(),"未查到数据！",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(tv_sqlmsg,"未查到数据！",Snackbar.LENGTH_SHORT).show();
                 }
                 break;
         }
     }
+
 }

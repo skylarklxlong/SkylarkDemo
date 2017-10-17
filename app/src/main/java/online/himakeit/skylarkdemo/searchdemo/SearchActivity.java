@@ -3,8 +3,11 @@ package online.himakeit.skylarkdemo.searchdemo;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -17,18 +20,15 @@ import android.widget.TextView;
 
 import online.himakeit.skylarkdemo.MyApplication;
 import online.himakeit.skylarkdemo.R;
-import online.himakeit.skylarkdemo.base.BaseFragment;
 
 /**
- * Created by：LiXueLong 李雪龙 on 2017/8/11 16:42
+ * Created by：LiXueLong 李雪龙 on 2017/10/17 15:14
  * <p>
  * Mail : skylarklxlong@outlook.com
  * <p>
  * Description:
  */
-public class SearchFragment extends BaseFragment {
-
-    View mRootView;
+public class SearchActivity extends AppCompatActivity {
 
     EditText mEditSearch;
     TextView mTvSearch;
@@ -45,23 +45,21 @@ public class SearchFragment extends BaseFragment {
     Cursor cursor;
 
     @Override
-    public View initViews() {
-        mRootView = View.inflate(getContext(), R.layout.fragment_search,null);
-        return mRootView;
-    }
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search_demo);
 
-    @Override
-    public void initData() {
         initView();
         initDatas();
         initListener();
     }
+
     private void initView() {
-        mEditSearch = (EditText) mRootView.findViewById(R.id.edit_search);
-        mTvSearch = (TextView) mRootView.findViewById(R.id.tv_search);
-        mTvTip = (TextView) mRootView.findViewById(R.id.tv_tip);
-        mListView = (ListViewForScrollView) mRootView.findViewById(R.id.listView);
-        mTvClear = (TextView) mRootView.findViewById(R.id.tv_clear);
+        mEditSearch = (EditText) findViewById(R.id.edit_search);
+        mTvSearch = (TextView) findViewById(R.id.tv_search);
+        mTvTip = (TextView) findViewById(R.id.tv_tip);
+        mListView = (ListViewForScrollView) findViewById(R.id.listView);
+        mTvClear = (TextView) findViewById(R.id.tv_clear);
     }
     private void initDatas() {
         searchSqliteHelper = new SearchSqliteHelper(MyApplication.getAppContext());
@@ -119,7 +117,7 @@ public class SearchFragment extends BaseFragment {
             public void onClick(View view) {
                 //隐藏键盘
                 ((InputMethodManager) MyApplication.getAppContext().getSystemService(Context.INPUT_METHOD_SERVICE))
-                        .hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                        .hideSoftInputFromWindow(SearchActivity.this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 //保存搜索记录
                 insertRecords(mEditSearch.getText().toString().trim());
 
@@ -136,7 +134,7 @@ public class SearchFragment extends BaseFragment {
                 if (keyCode == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
                     //隐藏键盘
                     ((InputMethodManager) MyApplication.getAppContext().getSystemService(Context.INPUT_METHOD_SERVICE))
-                            .hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                            .hideSoftInputFromWindow(SearchActivity.this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                     //保存搜索记录
                     insertRecords(mEditSearch.getText().toString().trim());
                 }
