@@ -24,6 +24,12 @@ public class ImmersionNavActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_immersion_nav);
+
+        StatusBarUtils.with(this)
+                .setDrawerLayoutContentId(true, R.id.rl_content)
+                .setColor(getResources().getColor(R.color.blue))
+                .init();
+
         // TODO: 2017/8/11 ToolBar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

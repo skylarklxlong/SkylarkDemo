@@ -21,7 +21,7 @@ import android.widget.LinearLayout;
  * <p>
  * Mail : skylarklxlong@outlook.com
  * <p>
- * Description: http://www.jianshu.com/p/dc20e98b9a90
+ * Description:
  */
 public class StatusBarUtils {
 

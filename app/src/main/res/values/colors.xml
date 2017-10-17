@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">@android:color/white</color>
     <color name="blue">#65B6EF</color>
+    <color name="shape1">#5d8df7</color>
+    <color name="shape2">#5EB9F8</color>
+    <color name="shape3">#5CC2F8</color>
 </resources>

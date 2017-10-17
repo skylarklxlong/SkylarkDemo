@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="online.himakeit.skylarkdemo.immersion_status_bar.ImmersionActionBarActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@mipmap/bg"
+        android:scaleType="fitXY"
+        />
+
 </android.support.constraint.ConstraintLayout>
