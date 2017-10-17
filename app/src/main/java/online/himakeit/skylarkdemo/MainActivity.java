@@ -18,9 +18,9 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import online.himakeit.skylarkdemo.fragment.ShapeFragment;
-import online.himakeit.skylarkdemo.fragment.SQLiteFragment;
-import online.himakeit.skylarkdemo.fragment.SearchFragment;
+import online.himakeit.skylarkdemo.shapedemo.ShapeFragment;
+import online.himakeit.skylarkdemo.sqlitedemo.SQLiteFragment;
+import online.himakeit.skylarkdemo.searchdemo.SearchFragment;
 import online.himakeit.skylarkdemo.fragment.TestFragment;
 
 public class MainActivity extends AppCompatActivity

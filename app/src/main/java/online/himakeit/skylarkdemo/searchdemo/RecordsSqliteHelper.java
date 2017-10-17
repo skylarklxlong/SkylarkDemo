@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.sql;
+package online.himakeit.skylarkdemo.searchdemo;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

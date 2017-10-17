@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.adapter;
+package online.himakeit.skylarkdemo.sqlitedemo;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import online.himakeit.skylarkdemo.R;
-import online.himakeit.skylarkdemo.bean.DBSQLBean;
 
 /**
  * Created by：LiXueLong 李雪龙 on 2017/8/17 19:46

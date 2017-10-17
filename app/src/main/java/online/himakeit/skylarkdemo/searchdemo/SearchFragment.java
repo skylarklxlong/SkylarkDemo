@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.fragment;
+package online.himakeit.skylarkdemo.searchdemo;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -18,9 +18,6 @@ import android.widget.TextView;
 import online.himakeit.skylarkdemo.MyApplication;
 import online.himakeit.skylarkdemo.R;
 import online.himakeit.skylarkdemo.base.BaseFragment;
-import online.himakeit.skylarkdemo.sql.RecordsSqliteHelper;
-import online.himakeit.skylarkdemo.sql.SearchSqliteHelper;
-import online.himakeit.skylarkdemo.views.ListViewForScrollView;
 
 /**
  * Created by：LiXueLong 李雪龙 on 2017/8/11 16:42

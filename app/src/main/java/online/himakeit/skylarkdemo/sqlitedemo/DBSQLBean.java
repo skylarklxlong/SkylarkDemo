@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.bean;
+package online.himakeit.skylarkdemo.sqlitedemo;
 
 /**
  * Created by：LiXueLong 李雪龙 on 2017/8/17 19:42

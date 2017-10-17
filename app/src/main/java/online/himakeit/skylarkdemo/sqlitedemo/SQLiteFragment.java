@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.fragment;
+package online.himakeit.skylarkdemo.sqlitedemo;
 
 import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
@@ -14,10 +14,7 @@ import java.util.List;
 
 import online.himakeit.skylarkdemo.MyApplication;
 import online.himakeit.skylarkdemo.R;
-import online.himakeit.skylarkdemo.adapter.SQLListViewAdapter;
 import online.himakeit.skylarkdemo.base.BaseFragment;
-import online.himakeit.skylarkdemo.bean.DBSQLBean;
-import online.himakeit.skylarkdemo.sql.DBSQLDao;
 
 /**
  * Created by：LiXueLong 李雪龙 on 2017/8/11 16:42

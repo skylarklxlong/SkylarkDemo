@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.provider;
+package online.himakeit.skylarkdemo.contentproviderdemo;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 
-import online.himakeit.skylarkdemo.sql.DBSQLHelper;
+import online.himakeit.skylarkdemo.sqlitedemo.DBSQLHelper;
 
 /**
  * Created by：LiXueLong 李雪龙 on 2017/9/5 13:55

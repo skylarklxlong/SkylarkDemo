@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.sql;
+package online.himakeit.skylarkdemo.sqlitedemo;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,8 +8,6 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import online.himakeit.skylarkdemo.bean.DBSQLBean;
 
 /**
  * Created by：LiXueLong 李雪龙 on 2017/8/17 20:12
