@@ -1,4 +1,4 @@
-package cn.itcast.utils;
+package com.skylark;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -11,8 +11,9 @@ public class StreamTool {
 
     /**
      * 保存文件
-     * @param file  文件路径
-     * @param data  字节码数据
+     *
+     * @param file 文件路径
+     * @param data 字节码数据
      * @throws Exception
      */
     public static void save(File file, byte[] data) throws Exception {
@@ -23,8 +24,9 @@ public class StreamTool {
 
     /**
      * 读取一行
-     * @param in    输入流
-     * @return  字符串
+     *
+     * @param in 输入流
+     * @return 字符串
      * @throws IOException
      */
     public static String readLine(PushbackInputStream in) throws IOException {

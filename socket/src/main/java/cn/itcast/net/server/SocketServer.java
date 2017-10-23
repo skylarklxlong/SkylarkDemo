@@ -102,9 +102,9 @@ public class SocketServer {
                     if (log == null) {//如果不存在上传记录,为文件添加跟踪记录
 //						String path = new SimpleDateFormat("yyyy/MM/dd/HH/mm").format(new Date());
 //						File dir = new File("file/"+ path);
-                        File dir = new File("file");
+                        File dir = new File("./socket/file/server");
                         if (!dir.exists()) dir.mkdirs();
-                        file = new File(dir, filename);
+                        file = new File(dir, filename);// 创建上传文件
                         if (file.exists()) {//如果上传的文件发生重名，然后进行改名
                             filename = filename.substring(0, filename.indexOf(".") - 1) + dir.listFiles().length + filename.substring(filename.indexOf("."));
                             file = new File(dir, filename);

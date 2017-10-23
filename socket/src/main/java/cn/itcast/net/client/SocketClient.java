@@ -19,11 +19,11 @@ public class SocketClient {
             OutputStream outStream = socket.getOutputStream();
             /**
              * 这里的file路径的根目录就是项目的的目录：SkylarkDemo\
-             * css.mp3也就是SkylarkDemo\css.mp3
+             * css.mp3也就是SkylarkDemo\cssserver.mp3
              * 所以在测试的时候，需要将要上传的文件拷贝到SkylarkDemo\目录下，
              * 然后，修改这里的filename
              */
-            String filename = "css.mp3";
+            String filename = "./socket/client/cssserver.mp3";
             File file = new File(filename);
             String head = "Content-Length=" + file.length() + ";filename=" + filename + ";sourceid=\r\n";
             outStream.write(head.getBytes());
