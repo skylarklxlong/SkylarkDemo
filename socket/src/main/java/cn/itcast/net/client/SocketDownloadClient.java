@@ -100,16 +100,18 @@ public class SocketDownloadClient {
                     byte[] buffer = new byte[1024];
                     int len = -1;
                     int length = position;
+                    int count = 0;
                     while ((len = inStream.read(buffer)) != -1) {//从输入流中读取数据写入到文件中
                         fileOutStream.write(buffer, 0, len);
                         length += len;
+                        count += 1;
                         Properties properties = new Properties();
                         properties.put("length", String.valueOf(length));
                         FileOutputStream fileOutputStream = new FileOutputStream(new File(file.getParentFile(), file.getName() + ".log"));
                         properties.store(fileOutputStream, null);//实时记录已经接收的文件长度
                         fileOutputStream.close();
 
-                        System.out.println("len : " + len);
+                        System.out.println("len : " + len + "--->count : " + count);
                     }
                     System.out.println("client receive finish");
                     if (length == fileOutStream.length()) delete(id);

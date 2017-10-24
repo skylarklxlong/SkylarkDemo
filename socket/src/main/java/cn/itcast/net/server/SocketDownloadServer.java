@@ -89,7 +89,7 @@ public class SocketDownloadServer {
 
                 RandomAccessFile fileInputStream = new RandomAccessFile(file, "r");
                 fileInputStream.seek(Integer.valueOf(position));
-                byte[] buffer = new byte[1024];
+                byte[] buffer = new byte[1024*8];
                 int len = -1;
                 int count = 0;
                 while ((len = fileInputStream.read(buffer)) != -1) {
