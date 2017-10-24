@@ -1,4 +1,4 @@
-package cn.itcast.net.server;
+package cn.itcast.net.client;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,84 +7,57 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PushbackInputStream;
 import java.io.RandomAccessFile;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import cn.itcast.utils.StreamTool;
 
-public class SocketServer {
+public class SocketDownloadClient {
 
     public static void main(String[] args) {
         try {
-            SocketServer socketServer = new SocketServer(7878);
-            socketServer.start();
-            System.out.println("server is running");
-        } catch (Exception e) {
+            SocketDownloadClient socketDownloadClient = new SocketDownloadClient("127.0.0.1",7879);
+            socketDownloadClient.start();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private ExecutorService executorService;//线程池
-    private int port;//监听端口
-    private boolean quit = false;//退出
-    private ServerSocket server;
     private Map<Long, FileLog> datas = new HashMap<Long, FileLog>();//存放断点数据
+    private String ipAddress;
+    private int port;
+    private Socket socket;
 
-    public SocketServer(int port) {
+    public SocketDownloadClient(String ipAddress, int port) {
+        this.ipAddress = ipAddress;
         this.port = port;
-        //创建线程池，池中具有(cpu个数*50)条线程
-        executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 50);
+
     }
 
-    /**
-     * 退出
-     */
-    public void quit() {
-        this.quit = true;
-        try {
-            server.close();
-        } catch (IOException e) {
-        }
+    public void start() throws IOException {
+        socket = new Socket(ipAddress,port);
+        new Thread(new SocketTask(socket)).start();
+
     }
 
-    /**
-     * 启动服务
-     *
-     * @throws Exception
-     */
-    public void start() throws Exception {
-        server = new ServerSocket(port);
-        while (!quit) {
-            try {
-                Socket socket = server.accept();
-                //为支持多用户并发访问，采用线程池管理每一个用户的连接请求
-                executorService.execute(new SocketTask(socket));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
+    private final class SocketTask implements Runnable{
 
-    private final class SocketTask implements Runnable {
         private Socket socket = null;
 
         public SocketTask(Socket socket) {
             this.socket = socket;
         }
 
+        @Override
         public void run() {
             try {
-                System.out.println("accepted connection " + socket.getInetAddress() + ":" + socket.getPort());
                 PushbackInputStream inStream = new PushbackInputStream(socket.getInputStream());
-                //得到客户端发来的第一行协议数据：Content-Length=143253434;filename=xxx.3gp;sourceid=
-                //如果用户初次上传文件，sourceid的值为空。
+                //得到服务端发来的第一行协议数据：Content-Length=143253434;filename=xxx.3gp;sourceid=
+                //如果用户初次下载文件，sourceid的值为空。
                 String head = StreamTool.readLine(inStream);
-                System.out.println(head);
+                System.out.println("server say "+head);
                 if (head != null) {
                     //下面从协议数据中提取各项参数值
                     String[] items = head.split(";");
@@ -92,40 +65,33 @@ public class SocketServer {
                     String filename = items[1].substring(items[1].indexOf("=") + 1);
                     String sourceid = items[2].substring(items[2].indexOf("=") + 1);
                     long id = System.currentTimeMillis();//生产资源id，如果需要唯一性，可以采用UUID
-                    FileLog log = null;
-                    if (sourceid != null && !"".equals(sourceid)) {
-                        id = Long.valueOf(sourceid);
-                        log = find(id);//查找上传的文件是否存在上传记录
-                    }
+                    System.out.println("client创建生产资源id：" + id);
                     File file = null;
                     int position = 0;
-                    if (log == null) {//如果不存在上传记录,为文件添加跟踪记录
-//						String path = new SimpleDateFormat("yyyy/MM/dd/HH/mm").format(new Date());
-//						File dir = new File("file/"+ path);
-                        File dir = new File("./socket/file/server");
+
+                    File logFile = new File("./socket/file/client",filename + ".log");
+                    if (logFile.exists()){
+                        file = new File("./socket/file/client",filename);
+                        Properties properties = new Properties();
+                        properties.load(new FileInputStream(logFile));
+                        position = Integer.valueOf(properties.getProperty("length"));//读取已经下载的数据长度
+                    }else {
+                        position = 0;
+                        File dir = new File("./socket/file/client");
                         if (!dir.exists()) dir.mkdirs();
-                        file = new File(dir, filename);// 创建上传文件
-                        if (file.exists()) {//如果上传的文件发生重名，然后进行改名
+                        file = new File(dir, filename);// 创建下载文件
+                        if (file.exists()) {//如果下载的文件发生重名，然后进行改名
                             filename = filename.substring(0, filename.indexOf(".") - 1) + dir.listFiles().length + filename.substring(filename.indexOf("."));
                             file = new File(dir, filename);
                         }
                         save(id, file);
-                    } else {// 如果存在上传记录,读取已经上传的数据长度
-                        file = new File(log.getPath());//从上传记录中得到文件的路径
-                        if (file.exists()) {
-                            File logFile = new File(file.getParentFile(), file.getName() + ".log");
-                            if (logFile.exists()) {
-                                Properties properties = new Properties();
-                                properties.load(new FileInputStream(logFile));
-                                position = Integer.valueOf(properties.getProperty("length"));//读取已经上传的数据长度
-                            }
-                        }
                     }
 
                     OutputStream outStream = socket.getOutputStream();
                     String response = "sourceid=" + id + ";position=" + position + "\r\n";
-                    //服务器收到客户端的请求信息后，给客户端返回响应信息：sourceid=1274773833264;position=0
-                    //sourceid由服务器端生成，唯一标识上传的文件，position指示客户端从文件的什么位置开始上传
+//                    String response = "sourceid=" + "1508811547833" + ";position=" + 517120 + "\r\n";
+                    //客户端收到服务器的请求信息后，给服务器返回响应信息：sourceid=1274773833264;position=0
+                    //sourceid由客户端生成，唯一标识下载的文件，position指示服务端从文件的什么位置开始上传
                     outStream.write(response.getBytes());
 
                     RandomAccessFile fileOutStream = new RandomAccessFile(file, "rwd");
@@ -139,13 +105,13 @@ public class SocketServer {
                         length += len;
                         Properties properties = new Properties();
                         properties.put("length", String.valueOf(length));
-                        FileOutputStream logFile = new FileOutputStream(new File(file.getParentFile(), file.getName() + ".log"));
-                        properties.store(logFile, null);//实时记录已经接收的文件长度
-                        logFile.close();
+                        FileOutputStream fileOutputStream = new FileOutputStream(new File(file.getParentFile(), file.getName() + ".log"));
+                        properties.store(fileOutputStream, null);//实时记录已经接收的文件长度
+                        fileOutputStream.close();
 
                         System.out.println("len : " + len);
                     }
-                    System.out.println("server receive finish");
+                    System.out.println("client receive finish");
                     if (length == fileOutStream.length()) delete(id);
                     fileOutStream.close();
                     inStream.close();
@@ -164,17 +130,18 @@ public class SocketServer {
         }
     }
 
+
     public FileLog find(Long sourceid) {
         return datas.get(sourceid);
     }
 
-    //保存上传记录
+    //保存下载记录
     public void save(Long id, File saveFile) {
         //日后可以改成通过数据库存放
         datas.put(id, new FileLog(id, saveFile.getAbsolutePath()));
     }
 
-    //当文件上传完毕，删除记录
+    //当文件下载完毕，删除记录
     public void delete(long sourceid) {
         if (datas.containsKey(sourceid)) datas.remove(sourceid);
     }
@@ -204,5 +171,4 @@ public class SocketServer {
             this.path = path;
         }
     }
-
 }
