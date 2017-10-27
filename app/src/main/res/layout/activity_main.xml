@@ -16,19 +16,19 @@
             <Button
                 android:id="@+id/btn_search_demo"
                 android:textAllCaps="false"
-                android:text="SearchDemo"
+                android:text="本地搜索Demo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/btn_sqlite_demo"
                 android:textAllCaps="false"
-                android:text="SQLiteDemo"
+                android:text="数据库Demo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/btn_shape_demo"
                 android:textAllCaps="false"
-                android:text="ShapeDemo"
+                android:text="自定义ShapeDemo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
@@ -38,8 +38,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
+                android:id="@+id/btn_test"
                 android:textAllCaps="false"
-                android:text="本地搜索Demo"
+                android:text="Test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button

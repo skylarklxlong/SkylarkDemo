@@ -66,6 +66,9 @@
         <activity android:name=".about.WebActivity"
             android:theme="@style/NoActionBarTheme"
             android:launchMode="singleTask"/>
+        <activity android:name=".test.TestActivity"
+            android:launchMode="singleTask"
+            android:label="Test"/>
 
     </application>
 
