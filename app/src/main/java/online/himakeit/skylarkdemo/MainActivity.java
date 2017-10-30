@@ -11,6 +11,7 @@ import android.view.View;
 import online.himakeit.skylarkdemo.about.AboutActivity;
 import online.himakeit.skylarkdemo.about.WebActivity;
 import online.himakeit.skylarkdemo.immersion_status_bar.MainImmersionActivity;
+import online.himakeit.skylarkdemo.motionevent.ActionUpActivity;
 import online.himakeit.skylarkdemo.searchdemo.SearchActivity;
 import online.himakeit.skylarkdemo.shapedemo.ShapeActivity;
 import online.himakeit.skylarkdemo.sqlitedemo.SQLiteActivity;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_shape_demo).setOnClickListener(this);
         findViewById(R.id.btn_immersion_demo).setOnClickListener(this);
         findViewById(R.id.btn_test).setOnClickListener(this);
+        findViewById(R.id.btn_me_act_up).setOnClickListener(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +83,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_test:
                 mIntent = new Intent(MainActivity.this, TestActivity.class);
+                startActivity(mIntent);
+                break;
+            case R.id.btn_me_act_up:
+                mIntent = new Intent(MainActivity.this, ActionUpActivity.class);
                 startActivity(mIntent);
                 break;
         }

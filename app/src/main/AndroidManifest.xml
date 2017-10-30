@@ -69,6 +69,9 @@
         <activity android:name=".test.TestActivity"
             android:launchMode="singleTask"
             android:label="Test"/>
+        <activity android:name=".motionevent.ActionUpActivity"
+            android:launchMode="singleTask"
+            android:label="@string/title_activity_actionup"/>
 
     </application>
 
