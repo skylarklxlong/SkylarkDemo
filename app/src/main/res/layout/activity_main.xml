@@ -50,8 +50,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
+                android:id="@+id/btn_demo"
                 android:textAllCaps="false"
-                android:text="本地搜索Demo"
+                android:text="Demo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button

@@ -72,6 +72,10 @@
         <activity android:name=".motionevent.ActionUpActivity"
             android:launchMode="singleTask"
             android:label="@string/title_activity_actionup"/>
+        <activity android:name=".demo.DemoActivity"
+            android:launchMode="singleTask"
+            android:label="@string/title_activity_demo"
+            android:theme="@style/NoActionBarTheme"/>
 
     </application>
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<online.himakeit.skylarkdemo.demo.heart.HeartViewView
+        android:id="@+id/heartView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <online.himakeit.skylarkdemo.demo.heart.HeartView2
+        android:id="@+id/heartview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <online.himakeit.skylarkdemo.demo.LoveView
+        android:id="@+id/loveView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <online.himakeit.skylarkdemo.demo.TypeTextView
+        android:id="@+id/typeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <online.himakeit.skylarkdemo.demo.shimmer.ShimmerTextView
+        android:id="@+id/shimmertextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:reflectionColor="#f00" />
+
+    <online.himakeit.skylarkdemo.demo.reveal.RevealTextView
+        android:id="@+id/revealtextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#f00"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
