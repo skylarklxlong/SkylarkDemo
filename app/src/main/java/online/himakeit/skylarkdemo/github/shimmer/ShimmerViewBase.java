@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.demo.shimmer;
+package online.himakeit.skylarkdemo.github.shimmer;
 
 /**
  * Shimmer

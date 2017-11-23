@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.demo;
+package online.himakeit.skylarkdemo.github.typetext;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.text.TextUtils;

@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.demo;
+package online.himakeit.skylarkdemo.github;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -10,9 +10,10 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import online.himakeit.skylarkdemo.R;
-import online.himakeit.skylarkdemo.demo.reveal.RevealTextView;
-import online.himakeit.skylarkdemo.demo.shimmer.Shimmer;
-import online.himakeit.skylarkdemo.demo.shimmer.ShimmerTextView;
+import online.himakeit.skylarkdemo.github.reveal.RevealTextView;
+import online.himakeit.skylarkdemo.github.shimmer.Shimmer;
+import online.himakeit.skylarkdemo.github.shimmer.ShimmerTextView;
+import online.himakeit.skylarkdemo.github.typetext.TypeTextView;
 
 /**
  * Created by：LiXueLong 李雪龙 on 2017/11/13 13:59
@@ -21,7 +22,7 @@ import online.himakeit.skylarkdemo.demo.shimmer.ShimmerTextView;
  * <p>
  * Description:
  */
-public class DemoActivity extends AppCompatActivity {
+public class GitHubRevealTextActivity extends AppCompatActivity {
 
     ShimmerTextView shimmerTextView;
     RevealTextView revealTextView;
@@ -30,7 +31,7 @@ public class DemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo);
+        setContentView(R.layout.activity_github_revealtextview);
 
         enableLayoutFullScreen();
 

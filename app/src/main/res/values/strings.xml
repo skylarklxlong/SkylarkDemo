@@ -10,7 +10,7 @@
     <string name="title_activity_immersion_nav">ImmersionNavDemo</string>
     <string name="title_activity_immersion_action_bar">ImmersionActionBarDemo</string>
     <string name="title_activity_actionup">MotionEventActionUpDemo</string>
-    <string name="title_activity_demo">Demo</string>
+    <string name="title_activity_github_revealtextview">RevealText</string>
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

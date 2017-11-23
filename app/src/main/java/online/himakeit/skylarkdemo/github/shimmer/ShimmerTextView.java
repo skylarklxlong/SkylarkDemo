@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.demo.shimmer;
+package online.himakeit.skylarkdemo.github.shimmer;
 
 import android.content.Context;
 import android.content.res.ColorStateList;

@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.demo;
+package online.himakeit.skylarkdemo.github;
 
 import android.content.Context;
 import android.graphics.Canvas;

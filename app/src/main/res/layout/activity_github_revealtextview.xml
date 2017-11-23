@@ -8,23 +8,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />-->
 
-    <online.himakeit.skylarkdemo.demo.heart.HeartView2
+    <online.himakeit.skylarkdemo.github.heart.HeartView2
         android:id="@+id/heartview2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <online.himakeit.skylarkdemo.demo.LoveView
+    <online.himakeit.skylarkdemo.github.LoveView
         android:id="@+id/loveView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
 
-    <online.himakeit.skylarkdemo.demo.TypeTextView
+    <online.himakeit.skylarkdemo.github.typetext.TypeTextView
         android:id="@+id/typeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <online.himakeit.skylarkdemo.demo.shimmer.ShimmerTextView
+    <online.himakeit.skylarkdemo.github.shimmer.ShimmerTextView
         android:id="@+id/shimmertextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         android:textStyle="bold"
         app:reflectionColor="#f00" />
 
-    <online.himakeit.skylarkdemo.demo.reveal.RevealTextView
+    <online.himakeit.skylarkdemo.github.reveal.RevealTextView
         android:id="@+id/revealtextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -72,10 +72,13 @@
         <activity android:name=".motionevent.ActionUpActivity"
             android:launchMode="singleTask"
             android:label="@string/title_activity_actionup"/>
-        <activity android:name=".demo.DemoActivity"
+        <activity android:name=".github.GitHubRevealTextActivity"
             android:launchMode="singleTask"
-            android:label="@string/title_activity_demo"
+            android:label="@string/title_activity_github_revealtextview"
             android:theme="@style/NoActionBarTheme"/>
+        <activity android:name=".github.GitHubActivity"
+            android:label="GitHub系列"
+            android:launchMode="singleTask"/>
 
     </application>
 

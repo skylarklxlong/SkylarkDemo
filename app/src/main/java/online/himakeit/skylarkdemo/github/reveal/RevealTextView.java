@@ -1,4 +1,4 @@
-package online.himakeit.skylarkdemo.demo.reveal;
+package online.himakeit.skylarkdemo.github.reveal;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
