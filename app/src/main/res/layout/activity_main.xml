@@ -9,67 +9,79 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/btn_search_demo"
-                android:textAllCaps="false"
-                android:text="本地搜索Demo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="本地搜索Demo"
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn_sqlite_demo"
-                android:textAllCaps="false"
-                android:text="数据库Demo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="数据库Demo"
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn_shape_demo"
-                android:textAllCaps="false"
-                android:text="自定义ShapeDemo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="自定义ShapeDemo"
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn_immersion_demo"
-                android:textAllCaps="false"
-                android:text="沉浸式状态栏Demo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="沉浸式状态栏Demo"
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn_test"
-                android:textAllCaps="false"
-                android:text="Test"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Test"
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn_me_act_up"
-                android:textAllCaps="false"
-                android:text="MotionEvent.ACTION_IPDemo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="MotionEvent.ACTION_IPDemo"
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn_github"
-                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="GitHub系列"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textAllCaps="false" />
+
             <Button
-                android:textAllCaps="false"
-                android:text="本地搜索Demo"
+                android:id="@+id/btn_vlc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="VLCSample"
+                android:textAllCaps="false" />
+
             <Button
-                android:textAllCaps="false"
-                android:text="本地搜索Demo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="本地搜索Demo"
+                android:textAllCaps="false" />
+
             <Button
-                android:textAllCaps="false"
-                android:text="本地搜索Demo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="本地搜索Demo"
+                android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>
 

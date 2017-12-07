@@ -3,6 +3,7 @@
     package="online.himakeit.skylarkdemo">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".MyApplication"
@@ -78,6 +79,11 @@
             android:theme="@style/NoActionBarTheme"/>
         <activity android:name=".github.GitHubActivity"
             android:label="GitHub系列"
+            android:launchMode="singleTask"/>
+        <activity android:name=".vlcsample.VlcSampleActivity"
+            android:theme="@style/FullscreenTheme"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="LibVLCJavaSample"
             android:launchMode="singleTask"/>
 
     </application>
