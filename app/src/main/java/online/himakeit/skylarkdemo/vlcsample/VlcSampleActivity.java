@@ -3,9 +3,9 @@ package online.himakeit.skylarkdemo.vlcsample;
 import android.annotation.TargetApi;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -35,7 +35,7 @@ import online.himakeit.skylarkdemo.R;
 public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnNewVideoLayoutListener {
     private static final boolean USE_SURFACE_VIEW = true;
     private static final boolean ENABLE_SUBTITLES = true;
-    private static final String TAG = "JavaActivity";
+    private static final String TAG = "VlcSampleActivity";
     private static final String SAMPLE_URL = "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_640x360.m4v";
     private static final int SURFACE_BEST_FIT = 0;
     private static final int SURFACE_FIT_SCREEN = 1;
@@ -117,9 +117,9 @@ public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnN
 
         ///storage/emulated/0/release-Android/videos/c.mp4
         ///sdcard/Movies/test1.mov
-//        Media media = new Media(mLibVLC, Uri.parse(SAMPLE_URL));
-        String path = Environment.getExternalStorageDirectory().getPath()+"/Movies/test1.mov";
-        Media media = new Media(mLibVLC, "storage/emulated/0/release-Android/videos/a.swf");
+        Media media = new Media(mLibVLC, Uri.parse(SAMPLE_URL));
+//        String path = Environment.getExternalStorageDirectory().getPath()+"/Movies/test1.mov";
+//        Media media = new Media(mLibVLC, "storage/emulated/0/release-Android/videos/a.swf");
         mMediaPlayer.setMedia(media);
         media.release();
         mMediaPlayer.play();
