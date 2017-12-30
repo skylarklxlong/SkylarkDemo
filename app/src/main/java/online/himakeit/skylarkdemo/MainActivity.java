@@ -12,6 +12,7 @@ import online.himakeit.skylarkdemo.about.AboutActivity;
 import online.himakeit.skylarkdemo.about.WebActivity;
 import online.himakeit.skylarkdemo.github.GitHubActivity;
 import online.himakeit.skylarkdemo.immersion_status_bar.MainImmersionActivity;
+import online.himakeit.skylarkdemo.launchmode.StandardModeActivity;
 import online.himakeit.skylarkdemo.motionevent.ActionUpActivity;
 import online.himakeit.skylarkdemo.searchdemo.SearchActivity;
 import online.himakeit.skylarkdemo.shapedemo.ShapeActivity;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_me_act_up).setOnClickListener(this);
         findViewById(R.id.btn_github).setOnClickListener(this);
         findViewById(R.id.btn_vlc).setOnClickListener(this);
+        findViewById(R.id.btn_launch).setOnClickListener(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +101,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_vlc:
                 mIntent = new Intent(MainActivity.this, VlcSampleActivity.class);
+                startActivity(mIntent);
+                break;
+            case R.id.btn_launch:
+                mIntent = new Intent(MainActivity.this, StandardModeActivity.class);
                 startActivity(mIntent);
                 break;
         }
