@@ -1,6 +1,7 @@
 package online.himakeit.skylarkdemo;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.View;
 import online.himakeit.skylarkdemo.about.AboutActivity;
 import online.himakeit.skylarkdemo.about.WebActivity;
 import online.himakeit.skylarkdemo.github.GitHubActivity;
+import online.himakeit.skylarkdemo.hooligan.BootCompleteReceiver;
 import online.himakeit.skylarkdemo.immersion_status_bar.MainImmersionActivity;
 import online.himakeit.skylarkdemo.launchmode.StandardModeActivity;
 import online.himakeit.skylarkdemo.motionevent.ActionUpActivity;
@@ -47,6 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(mIntent);
             }
         });
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_SCREEN_ON);
+        filter.addAction(Intent.ACTION_SCREEN_OFF);
+        registerReceiver(new BootCompleteReceiver(),filter);
     }
 
     @Override
