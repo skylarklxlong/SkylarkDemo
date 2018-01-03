@@ -15,6 +15,12 @@ import online.himakeit.skylarkdemo.MyApplication;
  * @mail1:skylarklxlong@outlook.com
  * @mail2:li_xuelong@126.com
  * @des:
+ * Android进程保活心得
+ * https://www.jianshu.com/p/9b3a2cd24849
+ * 实现谣传QQ中的手段——“1像素页面保活”
+ * https://www.jianshu.com/p/2c4f2586ed6f
+ * Android 进程常驻（0）----MarsDaemon使用说明
+ * http://blog.csdn.net/marswin89/article/details/50917098
  */
 public class HooliganActivity extends Activity {
     private static HooliganActivity instance;
