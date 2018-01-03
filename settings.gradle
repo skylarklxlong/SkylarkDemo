@@ -1,1 +1,1 @@
-include ':app', ':testcontentprovider', ':socket'
+include ':app', ':testcontentprovider', ':socket', ':wxjump'
