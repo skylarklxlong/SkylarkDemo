@@ -1,29 +1,6 @@
 package online.himakeit.skylarkdemo.vlcsample;
 
-import android.annotation.TargetApi;
-import android.content.res.Configuration;
-import android.graphics.PixelFormat;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.SurfaceView;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewStub;
-import android.widget.FrameLayout;
-
-import org.videolan.libvlc.IVLCVout;
-import org.videolan.libvlc.LibVLC;
-import org.videolan.libvlc.Media;
-import org.videolan.libvlc.MediaPlayer;
-
-import java.util.ArrayList;
-
-import online.himakeit.skylarkdemo.R;
 
 /**
  * Created by：LiXueLong 李雪龙 on 2017/12/7 10:09
@@ -32,7 +9,7 @@ import online.himakeit.skylarkdemo.R;
  * <p>
  * Description:
  */
-public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnNewVideoLayoutListener {
+public class VlcSampleActivity extends AppCompatActivity {}/*implements IVLCVout.OnNewVideoLayoutListener {
     private static final boolean USE_SURFACE_VIEW = true;
     private static final boolean ENABLE_SUBTITLES = true;
     private static final String TAG = "VlcSampleActivity";
@@ -160,7 +137,7 @@ public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnN
     }
 
     private void changeMediaPlayerLayout(int displayW, int displayH) {
-        /* Change the video placement using the MediaPlayer API */
+        *//* Change the video placement using the MediaPlayer API *//*
         switch (CURRENT_SIZE) {
             case SURFACE_BEST_FIT:
                 mMediaPlayer.setAspectRatio(null);
@@ -190,9 +167,9 @@ public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnN
 
                     float scale;
                     if (dar >= ar)
-                        scale = displayW / (float) videoW; /* horizontal */
+                        scale = displayW / (float) videoW; *//* horizontal *//*
                     else
-                        scale = displayH / (float) videoH; /* vertical */
+                        scale = displayH / (float) videoH; *//* vertical *//*
                     mMediaPlayer.setScale(scale);
                     mMediaPlayer.setAspectRatio(null);
                 } else {
@@ -231,7 +208,7 @@ public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnN
 
         ViewGroup.LayoutParams lp = mVideoView.getLayoutParams();
         if (mVideoWidth * mVideoHeight == 0) {
-            /* Case of OpenGL vouts: handles the placement of the video using MediaPlayer API */
+            *//* Case of OpenGL vouts: handles the placement of the video using MediaPlayer API *//*
             lp.width  = ViewGroup.LayoutParams.MATCH_PARENT;
             lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
             mVideoView.setLayoutParams(lp);
@@ -244,7 +221,7 @@ public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnN
         }
 
         if (lp.width == lp.height && lp.width == ViewGroup.LayoutParams.MATCH_PARENT) {
-            /* We handle the placement of the video using Android View LayoutParams */
+            *//* We handle the placement of the video using Android View LayoutParams *//*
             mMediaPlayer.setAspectRatio(null);
             mMediaPlayer.setScale(0);
         }
@@ -260,11 +237,11 @@ public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnN
         // compute the aspect ratio
         double ar, vw;
         if (mVideoSarDen == mVideoSarNum) {
-            /* No indication about the density, assuming 1:1 */
+            *//* No indication about the density, assuming 1:1 *//*
             vw = mVideoVisibleWidth;
             ar = (double)mVideoVisibleWidth / (double)mVideoVisibleHeight;
         } else {
-            /* Use the specified aspect ratio */
+            *//* Use the specified aspect ratio *//*
             vw = mVideoVisibleWidth * (double)mVideoSarNum / mVideoSarDen;
             ar = vw / mVideoVisibleHeight;
         }
@@ -281,9 +258,9 @@ public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnN
                 break;
             case SURFACE_FIT_SCREEN:
                 if (dar >= ar)
-                    dh = dw / ar; /* horizontal */
+                    dh = dw / ar; *//* horizontal *//*
                 else
-                    dw = dh * ar; /* vertical */
+                    dw = dh * ar; *//* vertical *//*
                 break;
             case SURFACE_FILL:
                 break;
@@ -338,4 +315,4 @@ public class VlcSampleActivity extends AppCompatActivity implements IVLCVout.OnN
         updateVideoSurfaces();
     }
 }
-
+*/

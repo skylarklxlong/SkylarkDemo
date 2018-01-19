@@ -90,12 +90,12 @@
             android:name=".github.GitHubActivity"
             android:label="GitHub系列"
             android:launchMode="singleTask" />
-        <activity
+        <!--<activity
             android:name=".vlcsample.VlcSampleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="LibVLCJavaSample"
             android:launchMode="singleTask"
-            android:theme="@style/FullscreenTheme" />
+            android:theme="@style/FullscreenTheme" />-->
         <activity
             android:name=".launchmode.StandardModeActivity"
             android:label="StandardMode"
@@ -119,6 +119,9 @@
             android:finishOnTaskLaunch="false"
             android:launchMode="singleInstance"
             android:theme="@style/HooliganActivityStyle"/>
+        <activity android:name=".surfaceview.SurfaceViewActivity"
+            android:label="SurfaceView"
+            android:launchMode="singleTask"/>
 
     </application>
 

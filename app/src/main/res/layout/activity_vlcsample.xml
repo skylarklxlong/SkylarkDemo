@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    android:background="@android:color/background_dark"
-    tools:context=".vlcsample.VlcSampleActivity">
+    android:background="@android:color/background_dark">
 
     <FrameLayout
         android:id="@+id/video_surface_frame"

@@ -19,8 +19,7 @@ import online.himakeit.skylarkdemo.motionevent.ActionUpActivity;
 import online.himakeit.skylarkdemo.searchdemo.SearchActivity;
 import online.himakeit.skylarkdemo.shapedemo.ShapeActivity;
 import online.himakeit.skylarkdemo.sqlitedemo.SQLiteActivity;
-import online.himakeit.skylarkdemo.test.TestActivity;
-import online.himakeit.skylarkdemo.vlcsample.VlcSampleActivity;
+import online.himakeit.skylarkdemo.surfaceview.SurfaceViewActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
-        registerReceiver(new BootCompleteReceiver(),filter);
+        registerReceiver(new BootCompleteReceiver(), filter);
     }
 
     @Override
@@ -69,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mIntent = new Intent(MainActivity.this, AboutActivity.class);
                 startActivity(mIntent);
                 break;
+            default:
         }
 
         return super.onOptionsItemSelected(item);
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(mIntent);
                 break;
             case R.id.btn_test:
-                mIntent = new Intent(MainActivity.this, TestActivity.class);
+                mIntent = new Intent(MainActivity.this, SurfaceViewActivity.class);
                 startActivity(mIntent);
                 break;
             case R.id.btn_me_act_up:
@@ -106,13 +106,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(mIntent);
                 break;
             case R.id.btn_vlc:
-                mIntent = new Intent(MainActivity.this, VlcSampleActivity.class);
-                startActivity(mIntent);
+//                mIntent = new Intent(MainActivity.this, VlcSampleActivity.class);
+//                startActivity(mIntent);
                 break;
             case R.id.btn_launch:
                 mIntent = new Intent(MainActivity.this, StandardModeActivity.class);
                 startActivity(mIntent);
                 break;
+            default:
         }
     }
 }

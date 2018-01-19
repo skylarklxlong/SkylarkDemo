@@ -22,11 +22,11 @@ android {
 }
 
 //---1、---
-repositories{
+/*repositories{
     flatDir{
         dirs 'libs'
     }
-}
+}*/
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -45,5 +45,5 @@ dependencies {
     compile 'com.daimajia.numberprogressbar:library:1.2@aar'
 
     //---2、---
-    compile(name:'libvlc-3.0.0',ext:'aar')
+    /*compile(name:'libvlc-3.0.0',ext:'aar')*/
 }
