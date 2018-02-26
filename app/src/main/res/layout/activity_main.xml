@@ -79,9 +79,40 @@
                 android:textAllCaps="false" />
 
             <Button
+                android:id="@+id/btn_spannablestring"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="本地搜索Demo"
+                android:text="SpannableStringDemo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Demo"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Demo"
                 android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>

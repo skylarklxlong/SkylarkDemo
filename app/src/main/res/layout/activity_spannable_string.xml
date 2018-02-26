@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="online.himakeit.skylarkdemo.spannablestring.SpannableStringActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/tv_spannable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_spannable_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="添加文字" />
+
+            <TextView
+                android:id="@+id/tv_spannable_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_spannable_text"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_01"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_02"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_03"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_04"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_05"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_06"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_08"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_07"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_08"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Hello Word!"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_spannable_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_spannable_09"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
             android:name=".contentproviderdemo.DBSQLProvider"
             android:authorities="online.himakeit.skylarkdemo.provider"
@@ -90,12 +91,14 @@
             android:name=".github.GitHubActivity"
             android:label="GitHub系列"
             android:launchMode="singleTask" />
-        <!--<activity
+        <!--
+            <activity
             android:name=".vlcsample.VlcSampleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="LibVLCJavaSample"
             android:launchMode="singleTask"
-            android:theme="@style/FullscreenTheme" />-->
+            android:theme="@style/FullscreenTheme" />
+        -->
         <activity
             android:name=".launchmode.StandardModeActivity"
             android:label="StandardMode"
@@ -112,17 +115,21 @@
             android:name=".launchmode.SingleInstanceModeActivity"
             android:label="SingleInstanceMode"
             android:launchMode="singleInstance" />
-        <activity android:name=".hooligan.HooliganActivity"
+        <activity
+            android:name=".hooligan.HooliganActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
             android:excludeFromRecents="true"
             android:exported="false"
             android:finishOnTaskLaunch="false"
             android:launchMode="singleInstance"
-            android:theme="@style/HooliganActivityStyle"/>
-        <activity android:name=".surfaceview.SurfaceViewActivity"
+            android:theme="@style/HooliganActivityStyle" />
+        <activity
+            android:name=".surfaceview.SurfaceViewActivity"
             android:label="SurfaceView"
-            android:launchMode="singleTask"/>
-
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".spannablestring.SpannableStringActivity"
+            android:label="SpannableString" />
     </application>
 
 </manifest>
