@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFCFC"
+    tools:context="online.himakeit.baidumaptest.BaiduMapTest2Activity">
+
+    <RelativeLayout
+        android:id="@+id/driverb_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/driver_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <com.baidu.mapapi.map.TextureMapView
+        android:id="@+id/driver_mTexturemap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/driverb_layout" />
+
+    <Button
+        android:id="@+id/driver_change"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/driverb_layout"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="70dp" />
+</RelativeLayout>

@@ -3,12 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="online.himakeit.baidumaptest.MainActivity">
 
-    <com.baidu.mapapi.map.MapView
-        android:id="@+id/map_view"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BaiduMapTest1"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BaiduMapTest2"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
