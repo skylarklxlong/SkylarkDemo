@@ -1,1 +1,1 @@
-include ':app', ':testcontentprovider', ':socket', ':wxjump'
+include ':app', ':testcontentprovider', ':socket', ':wxjump', ':baidumaptest'
