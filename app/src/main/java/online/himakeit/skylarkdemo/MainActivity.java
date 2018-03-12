@@ -12,6 +12,7 @@ import android.view.View;
 import online.himakeit.skylarkdemo.about.AboutActivity;
 import online.himakeit.skylarkdemo.about.WebActivity;
 import online.himakeit.skylarkdemo.github.GitHubActivity;
+import online.himakeit.skylarkdemo.handler.HandlerActivity;
 import online.himakeit.skylarkdemo.hooligan.BootCompleteReceiver;
 import online.himakeit.skylarkdemo.immersion_status_bar.MainImmersionActivity;
 import online.himakeit.skylarkdemo.launchmode.StandardModeActivity;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_vlc).setOnClickListener(this);
         findViewById(R.id.btn_launch).setOnClickListener(this);
         findViewById(R.id.btn_spannablestring).setOnClickListener(this);
+        findViewById(R.id.btn_handler).setOnClickListener(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +119,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_spannablestring:
                 mIntent = new Intent(MainActivity.this, SpannableStringActivity.class);
+                startActivity(mIntent);
+                break;
+            case R.id.btn_handler:
+                mIntent = new Intent(MainActivity.this, HandlerActivity.class);
                 startActivity(mIntent);
                 break;
             default:

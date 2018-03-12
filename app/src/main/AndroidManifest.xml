@@ -130,6 +130,7 @@
         <activity
             android:name=".spannablestring.SpannableStringActivity"
             android:label="SpannableString" />
+        <activity android:name=".handler.HandlerActivity"></activity>
     </application>
 
 </manifest>
